@@ -18,6 +18,7 @@ $wrap = $modx->runSnippet("DocLister", array(
             "idType"=>"documents",
             "documents"=>"",
             "ignoreEmpty"=>"1",
+			"addWhereList" => "hide=0",
             "cityDefault" => (int)$CityValue,
             "prepare" => function(array $data = array(), DocumentParser $modx, onetableDocLister $_DocLister){
                   $data['selected'] = ($_DocLister->getCFGDef('cityDefault')==$data['id']) ? 'selected="selected"' : '';

@@ -12,6 +12,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
             "controller" => "onetable",
             "table" => "street",
             "idType"=>"documents",
+			"addWhereList" => "hide=0",
             "documents"=>"",
             "ignoreEmpty"=>"1",
             "addWhereList" => "parent_id=".(int)$_POST['city'],
