@@ -1,6 +1,7 @@
 ### Установка
 ---------
 1) Устанавливаем [DocLister](https://github.com/AgelxNash/DocLister) последней версии
+
 2) Создаем модуль с кодом
 ```php
 include_once(MODX_BASE_PATH."assets/modules/DLCity/init.php");
@@ -15,10 +16,11 @@ return require MODX_BASE_PATH.'assets/modules/DLCity/CityList.snippet.php';
 <?php
 return require MODX_BASE_PATH.'assets/modules/DLCity/StreetList.snippet.php';
 ```
-5) Создаем **TV параметр City** с типом ввода DropDown List Menu и возможными значениями 
+5) Создаем **TV параметр City** с типом ввода Custom Input и возможными значениями 
 ```php
-@EVAL return $modx->runSnippet('CityList');
+@EVAL return $modx->runSnippet('CityList', array('selfName'=>'City'));
 ```
+Где в значении ключа selfName дублируется имя создаваемого TV параметра
 6) Создаем **TV параметр Street** с типом ввода Custom Input и возможными значениями 
 ```php
 @EVAL return $modx->runSnippet('StreetList', array(
