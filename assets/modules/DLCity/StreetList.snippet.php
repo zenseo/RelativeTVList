@@ -26,8 +26,7 @@ if(!empty($selfName)){
             "idType"=>"documents",
             "documents"=>"",
             "ignoreEmpty"=>"1",
-			"addWhereList" => "hide=0",
-			"addWhereList" => "parent_id=".(int)$cityValue,
+			"addWhereList" => "hide=0 AND parent_id=".(int)$cityValue,
             "streetDefault" => $streetValue,
             "prepare" => function(array $data = array(), DocumentParser $modx, onetableDocLister $_DocLister){
                   $data['selected'] = ($_DocLister->getCFGDef('streetDefault')==$data['id']) ? 'selected="selected"' : '';
